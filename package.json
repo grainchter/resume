@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "^2.20.0",
+    "@octokit/graphql": "^9.0.3",
     "framer-motion": "^12.38.0",
     "next": "16.2.4",
     "next-intl": "^4.9.1",
