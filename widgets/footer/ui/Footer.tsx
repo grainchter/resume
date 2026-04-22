@@ -1,5 +1,3 @@
-"use client";
-
 export function Footer() {
   return (
     <footer className="border-t border-[#00ffcc]/20 pt-8 mt-12">

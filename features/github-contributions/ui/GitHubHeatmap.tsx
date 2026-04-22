@@ -43,9 +43,6 @@ export function GitHubHeatmap({ data }: GitHubHeatmapProps) {
           </div>
         ))}
       </div>
-      <div className="mt-4 text-sm text-gray-400">
-        Всего вкладов за год: {calendar.totalContributions}
-      </div>
     </div>
   );
 }
