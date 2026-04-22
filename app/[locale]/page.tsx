@@ -1,3 +1,5 @@
+
+import { GitHubContributionsSection } from "@/features/github-contributions/ui/GitHubContributionsSection";
 import LocaleSwitcher from "@/shared/ui/LocaleSwitcher";
 import HeroSection from "@/widgets/header/ui/HeroSection";
 
@@ -9,6 +11,7 @@ export default async function Home() {
       </div>
       <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 relative">
         <HeroSection />
+        <GitHubContributionsSection />
       </div>
     </div>
   );

@@ -1,28 +1,23 @@
 import { CONTRIBUTIONS_QUERY } from "@/shared/lib/github/ContributionsQuery";
 import { githubGraphQLClient } from "@/shared/lib/github/githubGraphQLClient";
+import { ContributionsResponse } from "@/shared/types/github";
 import { NextResponse } from "next/server";
+import { unstable_cache } from "next/cache";
 
-interface ContributionDay {
-  contributionCount: number;
-  date: string;
-}
-
-interface Week {
-  contributionDays: ContributionDay[];
-}
-
-interface ContributionCalendar {
-  totalContributions: number;
-  weeks: Week[];
-}
-
-interface ContributionsResponse {
-  user: {
-    contributionsCollection: {
-      contributionCalendar: ContributionCalendar;
-    };
-  };
-}
+const getCachedContributions = unstable_cache(
+  async (username: string) => {
+    const data = await githubGraphQLClient<ContributionsResponse>(
+      CONTRIBUTIONS_QUERY,
+      { username },
+    );
+    return data;
+  },
+  ["github-contributions"],
+  {
+    revalidate: 86400, // 24 часа
+    tags: ["github-contributions"],
+  },
+);
 
 export async function GET() {
   const username = process.env.GITHUB_USERNAME;
@@ -35,12 +30,13 @@ export async function GET() {
   }
 
   try {
-    const data = await githubGraphQLClient<ContributionsResponse>(
-      CONTRIBUTIONS_QUERY,
-      { username },
-    );
+    const data = await getCachedContributions(username);
 
-    return NextResponse.json(data);
+    return NextResponse.json(data, {
+      headers: {
+        "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=86400",
+      },
+    });
   } catch (error: unknown) {
     console.error(error);
     const message =

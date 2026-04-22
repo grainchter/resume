@@ -5,7 +5,6 @@ import { notFound } from "next/navigation";
 import { routing } from "@/shared/config/i18n/routing";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { Locale } from "@/shared/config/i18n/request";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -22,10 +21,10 @@ export default async function LocaleLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }>) {
   const { locale } = await params;
-  if (!routing.locales.includes(locale)) {
+  if (!routing.locales.includes(locale as any)) {
     notFound();
   }
 
