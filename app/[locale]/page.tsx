@@ -1,6 +1,7 @@
 import { GitHubContributionsSection } from "@/features/github-contributions/ui/GitHubContributionsSection";
 import { LiveDemo } from "@/features/live-demo/ui/LiveDemo";
 import LocaleSwitcher from "@/shared/ui/LocaleSwitcher";
+import { Footer } from "@/widgets/footer/ui/Footer";
 import HeroSection from "@/widgets/header/ui/HeroSection";
 import { WorkTimeline } from "@/widgets/work-timeline/ui/WorkTimeline";
 
@@ -15,6 +16,7 @@ export default async function Home() {
         <WorkTimeline />
         <GitHubContributionsSection />
         <LiveDemo />
+        <Footer />
       </div>
     </div>
   );
