@@ -22,7 +22,13 @@ export function GitHubContributionsSection() {
           Не удалось загрузить данные: {error.message}
         </p>
       ) : (
-        <GitHubHeatmap data={contributions} />
+        <>
+          <GitHubHeatmap data={contributions} />
+          <p className="text-gray-500 text-xs mt-4 opacity-80">
+            Данные из GitHub обновляются раз в сутки и кэшируются для быстрой
+            загрузки.
+          </p>
+        </>
       )}
     </div>
   );
