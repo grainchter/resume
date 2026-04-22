@@ -1,10 +1,57 @@
 {
   "heroSection": {
-    "resumeTitle": "SENIOR FRONTEND ENGINEER",
+    "resumeTitle": "SENIOR FRONTEND DEVELOPER (REACT/NEXT.JS)",
     "resumeDescription": "Builds for Web",
     "name": "Yana Kazakova",
-    "role": "Frontend разработчик",
-    "experience": "3+ лет",
-    "specialization": "Web | Mobile | TypeScript"
+    "role": "Frontend Developer",
+    "experience": "3+ years",
+    "specialization": "React | Next.js | TypeScript"
+  },
+  "workHistory": {
+    "title": "Work Experience",
+    "downloadButton": "Download Full CV (PDF)",
+    "fileName": "Yana_Kazakova_CV",
+    "entries": [
+      {
+        "title": "Senior Software Engineer",
+        "company": "Cloudium LLC",
+        "period": "Dec 2023 – Feb 2026",
+        "achievements": [
+          "Built frontend architecture and client-side web apps with <React>, <Next.js>, and <TypeScript>",
+          "Collaborated with customers: clarified business logic, translated requirements into technical solutions",
+          "Agreed on API contracts with backend team, ensured correct integrations",
+          "Coordinated task execution within dev team: decomposition, estimation, prioritization",
+          "Implemented quality practices: automated testing (<Jest>), monitoring (<Sentry>), <CI/CD>",
+          "Built a team resource management service from scratch using <FSD> and testing, reducing time-to-market by 40% (to 2 days per feature)",
+          "Automated a reporting dashboard, cutting report generation time from 3 hours to 3–5 minutes",
+          "Developed and launched an AI recruiting service: achieved 98% error-free sessions and processed 500+ applications in first months",
+          "Modernized corporate messenger gateway with monitoring and error handling, reducing incidents from 5–7 per month to 0",
+          "Optimized frontend code and architecture, reducing technical debt and speeding up typical tasks by 20–25%"
+        ]
+      },
+      {
+        "title": "Software Developer",
+        "company": "Cloudium LLC",
+        "period": "Aug 2023 – Dec 2023",
+        "achievements": [
+          "Developed and maintained frontend apps on <Vue 2> and <React>: bug fixing, new features",
+          "Improved UI and application stability",
+          "Developed and maintained corporate <Firefox> extension using <Firefox Extensions API>",
+          "Ensured uninterrupted operation of services with 99.9% availability while continuously adding new functionality"
+        ]
+      },
+      {
+        "title": "Frontend Developer",
+        "company": "Getsbill LLC",
+        "period": "Oct 2022 – Apr 2023",
+        "achievements": [
+          "Created responsive, cross-browser interfaces from <Figma> mockups",
+          "Built <React> components, configured routing (<React Router>)",
+          "Integrated frontend with backend API",
+          "Optimized codebase: migrated class components to functional with hooks",
+          "Developed and maintained frontend apps on <Vue 2> and <React>, achieving 99.9% service availability"
+        ]
+      }
+    ]
   }
 }
