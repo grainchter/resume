@@ -1,4 +1,5 @@
 {
+  "contributions": "{count, plural, one {contribution} other {contributions}}",
   "heroSection": {
     "resumeTitle": "SENIOR FRONTEND DEVELOPER (REACT/NEXT.JS)",
     "resumeDescription": "Builds for Web",
@@ -17,16 +18,13 @@
         "company": "Cloudium LLC",
         "period": "Dec 2023 – Feb 2026",
         "achievements": [
-          "Built frontend architecture and client-side web apps with <React>, <Next.js>, and <TypeScript>",
-          "Collaborated with customers: clarified business logic, translated requirements into technical solutions",
-          "Agreed on API contracts with backend team, ensured correct integrations",
-          "Coordinated task execution within dev team: decomposition, estimation, prioritization",
-          "Implemented quality practices: automated testing (<Jest>), monitoring (<Sentry>), <CI/CD>",
-          "Built a team resource management service from scratch using <FSD> and testing, reducing time-to-market by 40% (to 2 days per feature)",
-          "Automated a reporting dashboard, cutting report generation time from 3 hours to 3–5 minutes",
-          "Developed and launched an AI recruiting service: achieved 98% error-free sessions and processed 500+ applications in first months",
-          "Modernized corporate messenger gateway with monitoring and error handling, reducing incidents from 5–7 per month to 0",
-          "Optimized frontend code and architecture, reducing technical debt and speeding up typical tasks by 20–25%"
+          "Designed frontend architecture and built client-side web apps using <React>, <Next.js>, and <TypeScript>",
+          "Optimized messenger performance by implementing virtual scrolling for long message lists, eliminating UI freezes and improving UX in chats with thousands of messages",
+          "Built an AI recruiting platform from scratch with <Next.js>, <SSR>, AI response streaming, and dynamic forms, achieving 98% error-free sessions and processing 500+ applications in the first months",
+          "Engineered a Gantt-like task management service with <ag-Grid> for large datasets and complex logic for grouping overlapping tasks into distinct rows",
+          "Maintained and enhanced 7+ services on <Vue 2>/<Vue 3> and <React>, implementing real-time updates via <WebSocket>, custom components (multi-range date picker, masked inputs), and tables with server-side pagination",
+          "Introduced unit testing (<Jest>) and error monitoring (<Sentry>) to ensure product stability",
+          "Acted as the sole frontend developer, taking full ownership of architecture, releases, and code quality"
         ]
       },
       {
@@ -34,10 +32,9 @@
         "company": "Cloudium LLC",
         "period": "Aug 2023 – Dec 2023",
         "achievements": [
-          "Developed and maintained frontend apps on <Vue 2> and <React>: bug fixing, new features",
-          "Improved UI and application stability",
-          "Developed and maintained corporate <Firefox> extension using <Firefox Extensions API>",
-          "Ensured uninterrupted operation of services with 99.9% availability while continuously adding new functionality"
+          "Developed and maintained frontend applications on <Vue 2> and <React>: bug fixing and feature development",
+          "Improved UI consistency and application stability",
+          "Ensured uninterrupted service operation with 99.9% availability while continuously rolling out new functionality"
         ]
       },
       {
@@ -46,12 +43,41 @@
         "period": "Oct 2022 – Apr 2023",
         "achievements": [
           "Created responsive, cross-browser interfaces from <Figma> mockups",
-          "Built <React> components, configured routing (<React Router>)",
-          "Integrated frontend with backend API",
-          "Optimized codebase: migrated class components to functional with hooks",
-          "Developed and maintained frontend apps on <Vue 2> and <React>, achieving 99.9% service availability"
+          "Built reusable <React> components and configured client-side routing (<React Router>)",
+          "Integrated frontend with backend APIs",
+          "Optimized codebase by migrating class components to functional components with hooks"
         ]
       }
     ]
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "projects": [
+      {
+        "title": "Interactive CV",
+        "description": "A responsive personal website with an interactive work history section. Built with Next.js to showcase frontend development skills.",
+        "link": ""
+      }
+    ]
+  },
+  "githubContributions": {
+    "title": "GitHub Contributions",
+    "loader": "Fetching GitHub activity...",
+    "error": "Unable to load data:",
+    "info": "Contribution graph updates daily. Data is cached for instant page loads."
+  },
+  "contactForm": {
+    "title": "Get in touch",
+    "form": {
+      "title": "Send a message",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "errorDefault": "Failed to send",
+      "errorNetwork": "Network error. Please try again later."
+    }
   }
 }

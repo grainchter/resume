@@ -5,6 +5,7 @@ import {
   FormStatus,
 } from "@/entities/contact-form/model/types";
 import { api } from "@/shared/lib/api/apiClient";
+import { useLocale, useTranslations } from "next-intl";
 
 interface ReactContactFormProps {
   onSuccess?: () => void;
@@ -15,6 +16,8 @@ export function ReactContactForm({
   onSuccess,
   onError,
 }: ReactContactFormProps) {
+  const t = useTranslations("contactForm");
+  const locale = useLocale();
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
@@ -34,7 +37,7 @@ export function ReactContactForm({
     setStatus("loading");
     setErrorText("");
     try {
-      const res = await api.post("/send-email", formData);
+      const res = await api.post("/send-email", { ...formData, locale });
       const data = await res.json();
       if (data.success) {
         setStatus("success");
@@ -42,24 +45,26 @@ export function ReactContactForm({
         onSuccess?.();
       } else {
         setStatus("error");
-        setErrorText(data.message || "Ошибка отправки");
-        onError?.(data.message);
+        const errorMsg = data.message || t("form.errorDefault");
+        setErrorText(errorMsg);
+        onError?.(errorMsg);
       }
     } catch {
       setStatus("error");
-      setErrorText("Ошибка сети. Попробуйте позже.");
-      onError?.("Network error");
+      const networkError = t("form.errorNetwork");
+      setErrorText(networkError);
+      onError?.(networkError);
     }
   };
 
   return (
     <div className="max-w-md mx-auto p-6 bg-black/40 rounded-lg border border-[#00ffcc]/30">
-      <h3 className="text-xl text-[#00ffcc] mb-4">Напишите мне</h3>
+      <h3 className="text-xl text-[#00ffcc] mb-4">{t("form.title")}</h3>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
           name="name"
-          placeholder="Ваше имя"
+          placeholder={t("form.name")}
           value={formData.name}
           onChange={handleChange}
           required
@@ -68,7 +73,7 @@ export function ReactContactForm({
         <input
           type="email"
           name="email"
-          placeholder="Ваш email"
+          placeholder={t("form.email")}
           value={formData.email}
           onChange={handleChange}
           required
@@ -76,7 +81,7 @@ export function ReactContactForm({
         />
         <textarea
           name="message"
-          placeholder="Сообщение"
+          placeholder={t("form.message")}
           rows={4}
           value={formData.message}
           onChange={handleChange}
@@ -88,10 +93,10 @@ export function ReactContactForm({
           disabled={status === "loading"}
           className="w-full bg-[#00ffcc]/10 border border-[#00ffcc] text-[#00ffcc] py-2 rounded hover:bg-[#00ffcc]/20 transition disabled:opacity-50"
         >
-          {status === "loading" ? "Отправка..." : "Отправить"}
+          {status === "loading" ? t("form.sending") : t("form.submit")}
         </button>
         {status === "success" && (
-          <p className="text-green-400 text-sm">Письмо успешно отправлено!</p>
+          <p className="text-green-400 text-sm">{t("form.success")}</p>
         )}
         {status === "error" && (
           <p className="text-red-400 text-sm">{errorText}</p>

@@ -1,14 +1,17 @@
+import { useTranslations, useLocale } from "next-intl";
 import { ContributionsResponse } from "@/shared/types/github";
 
 interface GitHubHeatmapProps {
-  data: ContributionsResponse
+  data: ContributionsResponse;
 }
 
 export function GitHubHeatmap({ data }: GitHubHeatmapProps) {
+  const t = useTranslations();
+  const locale = useLocale();
+
   const calendar = data.user.contributionsCollection.contributionCalendar;
   const weeks = calendar.weeks;
 
-  // Функция определения цвета в зависимости от количества вкладов
   const getColor = (count: number) => {
     if (count === 0) return 'bg-gray-800/20';
     if (count <= 2) return 'bg-[#00ffcc]/20';
@@ -18,26 +21,31 @@ export function GitHubHeatmap({ data }: GitHubHeatmapProps) {
     return 'bg-[#00ffcc]';
   };
 
-  // Форматирование даты для подсказки
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr);
-    return date.toLocaleDateString('ru-RU', {
+    return date.toLocaleDateString(locale, {
       day: 'numeric',
       month: 'long',
       year: 'numeric',
     });
   };
 
+  const getTooltipText = (dateStr: string, count: number) => {
+    const formattedDate = formatDate(dateStr);
+    const contributionWord = t('contributions', { count });
+    return `${formattedDate}: ${count} ${contributionWord}`;
+  };
+
   return (
-    <div className="w-full overflow-x-auto pb-2">
-      <div className="inline-flex gap-1">
+    <div className="w-full overflow-x-auto overflow-y-hidden pb-2">
+      <div className="inline-flex gap-1" style={{ minWidth: 'min-content' }}>
         {weeks.map((week, weekIndex) => (
           <div key={weekIndex} className="flex flex-col gap-1">
             {week.contributionDays.map((day, dayIndex) => (
               <div
                 key={dayIndex}
                 className={`w-3 h-3 rounded-sm ${getColor(day.contributionCount)} border border-[#00ffcc]/10 hover:border-[#00ffcc]/50 transition-all`}
-                title={`${formatDate(day.date)}: ${day.contributionCount} вклад${day.contributionCount === 1 ? '' : day.contributionCount < 5 ? 'а' : 'ов'}`}
+                title={getTooltipText(day.date, day.contributionCount)}
               />
             ))}
           </div>

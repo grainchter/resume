@@ -1,33 +1,30 @@
 "use client";
+import { useTranslations } from "next-intl";
 import { useGithubContributions } from "../hooks/useGithubContributions";
 import { GitHubHeatmap } from "./GitHubHeatmap";
 
 export function GitHubContributionsSection() {
+  const t = useTranslations("githubContributions");
   const { loading, contributions, error } = useGithubContributions();
 
   return (
-    <div className="px-4 sm:px-6 lg:px-8">
+    <div className="max-w-full overflow-hidden px-4 sm:px-6 lg:px-8">
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-[#00ffcc] border-b border-[#00ffcc]/20 pb-3 flex-1">
-          GitHub активность
+          {t("title")}
         </h2>
       </div>
 
       {loading || !contributions ? (
-        <p className="text-center text-gray-400">
-          Загрузка активности GitHub...
-        </p>
+        <p className="text-center text-gray-400">{t("loader")}</p>
       ) : error ? (
         <p className="text-center text-red-400">
-          Не удалось загрузить данные: {error.message}
+          {t("error")} {error.message}
         </p>
       ) : (
         <>
           <GitHubHeatmap data={contributions} />
-          <p className="text-gray-500 text-xs mt-4 opacity-80">
-            Данные из GitHub обновляются раз в сутки и кэшируются для быстрой
-            загрузки.
-          </p>
+          <p className="text-gray-500 text-xs mt-4 opacity-80">{t("info")}</p>
         </>
       )}
     </div>

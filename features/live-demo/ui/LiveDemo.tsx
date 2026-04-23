@@ -5,8 +5,10 @@ import { useLiveDemoState } from "../hooks/useLiveDemoState";
 import { DemoEditor } from "./DemoEditor";
 import { DemoPreview } from "./DemoPreview";
 import { reactContactFormCode } from "@/features/react-contact-form/config/code";
+import { useTranslations } from "next-intl";
 
 export function LiveDemo() {
+  const t = useTranslations("contactForm");
   const { output, handleRun, isRunning } = useLiveDemoState();
   const code = reactContactFormCode;
 
@@ -18,7 +20,7 @@ export function LiveDemo() {
     <div className="px-4 sm:px-6 lg:px-8">
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-[#00ffcc] border-b border-[#00ffcc]/20 pb-3 flex-1">
-          Свяжитесь со мной
+          {t("title")}
         </h2>
       </div>
 

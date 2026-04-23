@@ -3,6 +3,7 @@ import { LiveDemo } from "@/features/live-demo/ui/LiveDemo";
 import LocaleSwitcher from "@/shared/ui/LocaleSwitcher";
 import { Footer } from "@/widgets/footer/ui/Footer";
 import HeroSection from "@/widgets/header/ui/HeroSection";
+import { ProjectsSection } from "@/widgets/projects-section/ui/ProjectsSection";
 import { WorkTimeline } from "@/widgets/work-timeline/ui/WorkTimeline";
 
 export default async function Home() {
@@ -14,6 +15,7 @@ export default async function Home() {
       <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 relative grid gap-y-15">
         <HeroSection />
         <WorkTimeline />
+        <ProjectsSection />
         <GitHubContributionsSection />
         <LiveDemo />
         <Footer />
