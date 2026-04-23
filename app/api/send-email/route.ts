@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
 import { translations } from "@/shared/config/locales/serverLocales";
+import { createRateLimiter } from "@/shared/lib/rate-limit/rate-limit";
 
 interface EmailRequestBody {
   name: string;
@@ -127,8 +128,22 @@ function validateInput(
   }
 }
 
+const rateLimiter = createRateLimiter(2, "60 s");
+
 export async function POST(request: NextRequest) {
   try {
+    const ip = (request.headers.get("x-forwarded-for") ?? "127.0.0.1").split(
+      ",",
+    )[0];
+    const { success } = await rateLimiter.limit(ip);
+
+    if (!success) {
+      return NextResponse.json(
+        { error: "Слишком много запросов. Пожалуйста, попробуйте позже." },
+        { status: 429 },
+      );
+    }
+
     const {
       name,
       email,
