@@ -5,7 +5,7 @@
   },
   "contributions": "{count, plural, one {вклад} few {вклада} many {вкладов} other {вкладов}}",
   "heroSection": {
-    "resumeTitle": "SENIOR FRONTEND-РАЗРАБОТЧИК (REACT/NEXT.JS)",
+    "resumeTitle": "FRONTEND-РАЗРАБОТЧИК (REACT/NEXT.JS)",
     "resumeDescription": "Создаю веб-приложения",
     "name": "Яна Казакова",
     "role": "Frontend-разработчик",
