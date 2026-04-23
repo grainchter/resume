@@ -1,6 +1,10 @@
+"use client";
+
 import { ProjectEntry } from "@/entities/project-entry/ui/ProjectEntry";
+import { scrollReveal } from "@/shared/constants/animations";
 import { getProjects } from "@/shared/utils/getProjects";
-import { getTranslations } from "next-intl/server";
+import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 
 export interface Project {
   title: string;
@@ -8,12 +12,12 @@ export interface Project {
   link: string;
 }
 
-export async function ProjectsSection() {
-  const t = await getTranslations("projects");
+export function ProjectsSection() {
+  const t = useTranslations("projects");
   const rawEntries = t.raw("projects") as any[];
   const projects = getProjects({ projects: rawEntries });
   return (
-    <section className="mb-24">
+    <motion.section className="mb-24" {...scrollReveal}>
       <h2 className="mb-8 text-[#00ffcc] border-b border-[#00ffcc]/20 pb-3">
         {t("title")}
       </h2>
@@ -27,6 +31,6 @@ export async function ProjectsSection() {
           />
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }

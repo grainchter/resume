@@ -3,11 +3,13 @@
 import Image from "next/image";
 import { Terminal } from "@/shared/ui/Terminal";
 import { useTranslations } from "next-intl";
+import { motion } from "motion/react";
+import { scrollReveal } from "@/shared/constants/animations";
 
 export default function HeroSection() {
   const t = useTranslations("heroSection");
   return (
-    <section className="mb-24">
+    <motion.section className="mb-24" {...scrollReveal}>
       <div className="grid lg:grid-cols-2 gap-8 items-center">
         <div className="order-2 lg:order-1 h-[400px] lg:h-[500px]">
           <Terminal />
@@ -16,21 +18,23 @@ export default function HeroSection() {
           <div className="flex justify-center lg:justify-start mb-6">
             <div className="relative w-42 h-42 rounded-full bg-gradient-to-br from-[#00ffcc] to-[#00ffcc]/40 overflow-hidden">
               <Image
+                priority
                 src="/avatar/avatar.png"
                 alt="Avatar"
-                fill
+                width={200}
+                height={200}
                 className="object-cover mt-[10px]"
               />
             </div>
           </div>
           <div className="space-y-2">
             <div className="text-[#00ffcc]/60 font-['JetBrains_Mono'] tracking-wider">
-              {t('resumeTitle')}
+              {t("resumeTitle")}
             </div>
-            <p className="text-gray-400">{t('resumeDescription')}</p>
+            <p className="text-gray-400">{t("resumeDescription")}</p>
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

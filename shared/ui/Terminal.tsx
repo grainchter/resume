@@ -15,8 +15,6 @@ export function Terminal() {
     return () => clearInterval(interval);
   }, []);
 
-  console.log(t("specialization"));
-
   return (
     <div className="w-full h-full bg-black border border-[#00ffcc]/20 overflow-hidden backdrop-blur-sm">
       <div className="bg-gradient-to-r from-gray-900 to-black border-b border-[#00ffcc]/20 px-4 py-2 flex items-center gap-2">

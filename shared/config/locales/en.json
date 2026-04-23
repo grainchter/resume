@@ -1,4 +1,8 @@
 {
+  "Metadata": {
+    "title": "Yana Kazakova | Frontend Developer",
+    "description": "CV of Yana Kazakova, frontend developer. Next.js, React, TypeScript, modern web technologies."
+  },
   "contributions": "{count, plural, one {contribution} other {contributions}}",
   "heroSection": {
     "resumeTitle": "SENIOR FRONTEND DEVELOPER (REACT/NEXT.JS)",
@@ -56,7 +60,7 @@
       {
         "title": "Interactive CV",
         "description": "A responsive personal website with an interactive work history section. Built with Next.js to showcase frontend development skills.",
-        "link": ""
+        "link": "https://github.com/grainchter/resume"
       }
     ]
   },

@@ -1,4 +1,8 @@
 {
+  "Metadata": {
+    "title": "Казакова Яна | Frontend-разработчик",
+    "description": "Резюме фронтенд-разработчика Яны Казаковой. Next.js, React, TypeScript, современные веб-технологии."
+  },
   "contributions": "{count, plural, one {вклад} few {вклада} many {вкладов} other {вкладов}}",
   "heroSection": {
     "resumeTitle": "SENIOR FRONTEND-РАЗРАБОТЧИК (REACT/NEXT.JS)",
@@ -56,7 +60,7 @@
       {
         "title": "Интерактивное резюме",
         "description": "Этот сайт-визитка с адаптивным дизайном и интерактивной историей работы. Реализован на Next.js с целью демонстрации навыков фронтенд-разработки.",
-        "link": ""
+        "link": "https://github.com/grainchter/resume"
       }
     ]
   },

@@ -2,13 +2,18 @@
 import { useTranslations } from "next-intl";
 import { useGithubContributions } from "../hooks/useGithubContributions";
 import { GitHubHeatmap } from "./GitHubHeatmap";
+import { motion } from "motion/react";
+import { scrollReveal } from "@/shared/constants/animations";
 
 export function GitHubContributionsSection() {
   const t = useTranslations("githubContributions");
   const { loading, contributions, error } = useGithubContributions();
 
   return (
-    <div className="max-w-full overflow-hidden px-4 sm:px-6 lg:px-8">
+    <motion.div
+      className="max-w-full overflow-hidden px-4 sm:px-6 lg:px-8"
+      {...scrollReveal}
+    >
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-[#00ffcc] border-b border-[#00ffcc]/20 pb-3 flex-1">
           {t("title")}
@@ -27,6 +32,6 @@ export function GitHubContributionsSection() {
           <p className="text-gray-500 text-xs mt-4 opacity-80">{t("info")}</p>
         </>
       )}
-    </div>
+    </motion.div>
   );
 }
