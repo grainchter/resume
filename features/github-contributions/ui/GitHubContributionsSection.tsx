@@ -15,7 +15,7 @@ export function GitHubContributionsSection() {
       {...scrollReveal}
     >
       <div className="flex justify-between items-center mb-8">
-        <h2 className="text-[#00ffcc] border-b border-[#00ffcc]/20 pb-3 flex-1">
+        <h2 className="text-primary border-b border-primary/20 pb-3 flex-1">
           {t("title")}
         </h2>
       </div>

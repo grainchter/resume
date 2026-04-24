@@ -14,11 +14,11 @@ export function GitHubHeatmap({ data }: GitHubHeatmapProps) {
 
   const getColor = (count: number) => {
     if (count === 0) return 'bg-gray-800/20';
-    if (count <= 2) return 'bg-[#00ffcc]/20';
-    if (count <= 5) return 'bg-[#00ffcc]/40';
-    if (count <= 8) return 'bg-[#00ffcc]/60';
-    if (count <= 12) return 'bg-[#00ffcc]/80';
-    return 'bg-[#00ffcc]';
+    if (count <= 2) return 'bg-primary/20';
+    if (count <= 5) return 'bg-primary/40';
+    if (count <= 8) return 'bg-primary/60';
+    if (count <= 12) return 'bg-primary/80';
+    return 'bg-primary';
   };
 
   const formatDate = (dateStr: string) => {
@@ -44,7 +44,7 @@ export function GitHubHeatmap({ data }: GitHubHeatmapProps) {
             {week.contributionDays.map((day, dayIndex) => (
               <div
                 key={dayIndex}
-                className={`w-3 h-3 rounded-sm ${getColor(day.contributionCount)} border border-[#00ffcc]/10 hover:border-[#00ffcc]/50 transition-all`}
+                className={`w-3 h-3 rounded-sm ${getColor(day.contributionCount)} border border-primary/10 hover:border-primary/50 transition-all`}
                 title={getTooltipText(day.date, day.contributionCount)}
               />
             ))}

@@ -58,8 +58,8 @@ export function ReactContactForm({
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-black/40 rounded-lg border border-[#00ffcc]/30">
-      <h3 className="text-xl text-[#00ffcc] mb-4">{t("form.title")}</h3>
+    <div className="max-w-md mx-auto p-6 bg-black/40 rounded-lg border border-primary/30">
+      <h3 className="text-xl text-primary mb-4">{t("form.title")}</h3>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
@@ -68,7 +68,7 @@ export function ReactContactForm({
           value={formData.name}
           onChange={handleChange}
           required
-          className="w-full p-2 bg-gray-900 border border-gray-700 rounded text-white focus:outline-none focus:border-[#00ffcc]"
+          className="w-full p-2 bg-gray-900 border border-gray-700 rounded text-white focus:outline-none focus:border-primary"
         />
         <input
           type="email"
@@ -77,7 +77,7 @@ export function ReactContactForm({
           value={formData.email}
           onChange={handleChange}
           required
-          className="w-full p-2 bg-gray-900 border border-gray-700 rounded text-white focus:outline-none focus:border-[#00ffcc]"
+          className="w-full p-2 bg-gray-900 border border-gray-700 rounded text-white focus:outline-none focus:border-primary"
         />
         <textarea
           name="message"
@@ -86,12 +86,12 @@ export function ReactContactForm({
           value={formData.message}
           onChange={handleChange}
           required
-          className="w-full p-2 bg-gray-900 border border-gray-700 rounded text-white focus:outline-none focus:border-[#00ffcc]"
+          className="w-full p-2 bg-gray-900 border border-gray-700 rounded text-white focus:outline-none focus:border-primary"
         />
         <button
           type="submit"
           disabled={status === "loading"}
-          className="w-full bg-[#00ffcc]/10 border border-[#00ffcc] text-[#00ffcc] py-2 rounded hover:bg-[#00ffcc]/20 transition disabled:opacity-50"
+          className="w-full bg-primary/10 border border-primary text-primary py-2 rounded hover:bg-primary/20 transition disabled:opacity-50"
         >
           {status === "loading" ? t("form.sending") : t("form.submit")}
         </button>

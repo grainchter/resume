@@ -39,7 +39,7 @@ export function DownloadCVButton() {
     <button
       onClick={handleDownload}
       disabled={isLoading}
-      className="flex items-center gap-2 bg-[#00ffcc]/10 border border-[#00ffcc] text-[#00ffcc] px-4 py-2 hover:bg-[#00ffcc]/20 transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+      className="flex items-center gap-2 bg-primary/10 border border-primary text-primary px-4 py-2 hover:bg-primary/20 transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed"
     >
       <span>{isLoading ? "Loading..." : t("downloadButton")}</span>
     </button>

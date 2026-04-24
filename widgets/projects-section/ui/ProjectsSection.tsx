@@ -18,7 +18,7 @@ export function ProjectsSection() {
   const projects = getProjects({ projects: rawEntries });
   return (
     <motion.section className="mb-24" {...scrollReveal}>
-      <h2 className="mb-8 text-[#00ffcc] border-b border-[#00ffcc]/20 pb-3">
+      <h2 className="mb-8 text-primary border-b border-primary/20 pb-3">
         {t("title")}
       </h2>
       <div className="grid md:grid-cols-2 gap-6">

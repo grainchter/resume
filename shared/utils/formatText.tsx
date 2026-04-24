@@ -6,7 +6,7 @@ export function formatTextWithTags(text: string): ReactNode[] {
     if (part.startsWith('<') && part.endsWith('>')) {
       const tech = part.slice(1, -1);
       return (
-        <span key={index} className="font-['JetBrains_Mono'] text-[#00ffcc] text-sm">
+        <span key={index} className="font-['JetBrains_Mono'] text-primary text-sm">
           {tech}
         </span>
       );

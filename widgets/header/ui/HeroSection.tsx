@@ -16,7 +16,7 @@ export default function HeroSection() {
         </div>
         <div className="order-1 lg:order-2 text-center lg:text-left">
           <div className="flex justify-center lg:justify-start mb-6">
-            <div className="relative w-42 h-42 rounded-full bg-gradient-to-br from-[#00ffcc] to-[#00ffcc]/40 overflow-hidden">
+            <div className="relative w-42 h-42 rounded-full bg-gradient-to-br from-primary to-primary/40 overflow-hidden">
               <Image
                 priority
                 src="/avatar/avatar.png"
@@ -28,7 +28,7 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="space-y-2">
-            <div className="text-[#00ffcc]/60 font-['JetBrains_Mono'] tracking-wider">
+            <div className="text-primary/60 font-['JetBrains_Mono'] tracking-wider">
               {t("resumeTitle")}
             </div>
             <p className="text-gray-400">{t("resumeDescription")}</p>

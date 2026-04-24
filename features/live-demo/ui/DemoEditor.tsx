@@ -61,10 +61,10 @@ export function DemoEditor({
 
   return (
     <div className="relative group">
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#00ffcc]/10 to-transparent rounded-sm blur"></div>
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/10 to-transparent rounded-sm blur"></div>
 
-      <div className="relative bg-black border border-[#00ffcc]/30 overflow-hidden">
-        <div className="bg-gradient-to-r from-gray-900 to-black border-b border-[#00ffcc]/20 px-4 py-2 flex items-center justify-between">
+      <div className="relative bg-black border border-primary/30 overflow-hidden">
+        <div className="bg-gradient-to-r from-gray-900 to-black border-b border-primary/20 px-4 py-2 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
             <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
@@ -85,7 +85,7 @@ export function DemoEditor({
 
             <button
               onClick={onRun}
-              className="bg-[#00ffcc]/10 border border-[#00ffcc]/50 text-[#00ffcc] px-3 py-1 text-xs hover:bg-[#00ffcc]/20 transition"
+              className="bg-primary/10 border border-primary/50 text-primary px-3 py-1 text-xs hover:bg-primary/20 transition"
             >
               Run
             </button>
@@ -97,7 +97,7 @@ export function DemoEditor({
           dangerouslySetInnerHTML={{ __html: highlighted }}
         />
 
-        <div className="border-t border-[#00ffcc]/20 px-4 py-2 bg-black/60">
+        <div className="border-t border-primary/20 px-4 py-2 bg-black/60">
           <div className="text-xs font-mono text-gray-500">
             {output}
           </div>
