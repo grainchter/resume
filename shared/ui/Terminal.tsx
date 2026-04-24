@@ -31,7 +31,7 @@ export function Terminal() {
         </div>
         <div className="space-y-2 text-gray-300">
           <div>
-            <span className="text-primary">name:</span> "{t("name")}"
+            <span className="text-primary">fullName:</span> "{t("name")}"
           </div>
           <div>
             <span className="text-primary">role:</span> "{t("role")}"

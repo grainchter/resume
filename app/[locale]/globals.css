@@ -4,6 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --primary: #00ffcc;
+  --primary-rgb: 0, 255, 204;
 }
 
 @theme {
